@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* DAO Privacy Dashboard Design System - Web3 Aesthetic */
+
+@layer base {
+  :root {
+    --background: 222 47% 5%;
+    --foreground: 210 40% 98%;
+
+    --card: 224 37% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 224 37% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 262 77% 65%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 224 37% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 224 37% 12%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 262 50% 25%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 224 37% 15%;
+    --input: 224 37% 15%;
+    --ring: 262 77% 65%;
+
+    /* DAO-specific design tokens */
+    --privacy-primary: 262 77% 65%;
+    --privacy-secondary: 230 65% 55%;
+    --treasury-accent: 165 100% 50%;
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+
+    /* Gradients */
+    --gradient-dao: linear-gradient(135deg, hsl(262 77% 65%), hsl(230 65% 55%));
+    --gradient-card: linear-gradient(145deg, hsl(224 37% 8%), hsl(224 37% 12%));
+    --gradient-privacy: linear-gradient(90deg, hsl(262 77% 65% / 0.1), hsl(230 65% 55% / 0.1));
+
+    /* Shadows */
+    --shadow-dao: 0 10px 30px -10px hsl(262 77% 65% / 0.3);
+    --shadow-card: 0 4px 20px -5px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 20px hsl(262 77% 65% / 0.2);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark mode would inherit the same values since we're already dark */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-privacy-primary/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-privacy-primary/50;
+  }
+}
